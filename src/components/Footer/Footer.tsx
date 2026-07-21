@@ -22,11 +22,14 @@ export const Footer = () => {
 
                 <div className={styles['socials']}>
                     <img src='' alt='just an image'/>
+                    <img src='' alt='just an image'/>
+                    <img src='' alt='just an image'/>
                 </div>
 
             </div>
 
             <div className={styles['part2']}>
+
 
                 <div className={styles['quick-links']}>
 
