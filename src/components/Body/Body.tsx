@@ -4,8 +4,12 @@ import { ContentContainer } from '../../ContentContainer'
 import styles from './Body.module.css'
 import { Text } from '../Text/Text'
 import { Search } from '../Search/Search'
+import { StatsPanel } from '../StatsPanel/StatsPanel'
+import { useBookmarks } from '../hooks/useBookmarks'
 
 export const Body: React.FC<any> = () => {
+const { bookmarks, add, stats } = useBookmarks()
+
   return (
     <ContentContainer className={styles['body-cont']}>
 
@@ -17,7 +21,7 @@ export const Body: React.FC<any> = () => {
 
                 <Text variant='span'>Store</Text>
 
-                <Search />
+                <Search onAdd={add}/>
 
             </div>
 
@@ -25,43 +29,7 @@ export const Body: React.FC<any> = () => {
 
         <section className={styles['sec-sect']}>
 
-            <div className={styles['statistics']}>
-
-                <div className={styles['stat-cont']}>
-
-                    <div className={styles['stat']}>
-                        <Text variant='h2'  >Total Links</Text>
-                        <Text variant='h2'  >Total Links</Text>
-                        <Text variant='h2'  >Total Links</Text>
-                        <Text variant='h2'  >Total Links</Text>
-                        <Text variant='h2'  >Total Links</Text>
-                    </div>
-                    
-
-
-                </div>
-
-                <div className={styles['stat-cont']}>
-
-                    <div className={styles['stat']}>
-
-                        <Text variant='h2'  >Book Mark</Text>
-                        <Text variant='h2'  >Book Marks</Text>
-                        <Text variant='h2'  >Book Mark</Text>
-                        <Text variant='h2'  >Book Marks</Text>
-                        <Text variant='h2'  >Book Mark</Text>
-
-                    </div>
-
-                </div>
-
-                <div className={styles['stat-cont']}>
-
-                    div
-
-                </div>
-
-            </div>
+            <StatsPanel total={stats.total} bookmarked={stats.bookmarked} />
 
         </section>
 

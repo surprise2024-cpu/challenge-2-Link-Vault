@@ -1,11 +1,12 @@
 import React from 'react'
 
 import styles from './Search.module.css'
-import { Searchbar } from './Searchbar'
+import { LinkForm } from './LinkForm'
 import { ContentContainer } from '../../ContentContainer'
+import type { AddInput } from '../hooks/useBookmarks'
 
-interface SearchProps {
-  onAdd: (url: string) => void
+type SearchProps = {
+  onAdd: (input: AddInput) => void
 }
 
 export const Search: React.FC<SearchProps> = ({ onAdd }) => {
@@ -14,7 +15,7 @@ export const Search: React.FC<SearchProps> = ({ onAdd }) => {
 
       <ContentContainer>
 
-        <Searchbar onAdd={onAdd} />
+        <LinkForm onAdd={onAdd} />
         
       </ContentContainer>
         

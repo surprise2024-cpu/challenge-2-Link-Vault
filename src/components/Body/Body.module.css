@@ -8,15 +8,10 @@
 }
 
 
-.statistics {
+.sec-sect {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.stat {
-    font-size: 20px;
-    border: 1px solid green;
-    border-radius: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 120px 40px 40px;
+    gap: 40px;
 }

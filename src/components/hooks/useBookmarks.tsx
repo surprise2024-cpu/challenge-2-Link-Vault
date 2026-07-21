@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Bookmark } from "../library/types";
 import { getBookmarks, saveBookmark, deleteBookmark, updateBookmark } from "../library/storage";
 
-interface AddInput {
+export type AddInput = {
     title: string
     url: string
     description?: string
