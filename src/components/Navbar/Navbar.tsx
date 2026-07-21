@@ -20,6 +20,7 @@ export const Navbar: React.FC<any> = () => {
                 </div>
 
             </div>
+            
         </ContentContainer>
     </nav>
   )
