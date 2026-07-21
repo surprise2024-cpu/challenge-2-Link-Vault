@@ -4,7 +4,7 @@ import styles from './Navbar.module.css'
 import { ContentContainer } from '../../ContentContainer'
 import { Text } from '../Text/Text'
 
-export const Navbar = () => {
+export const Navbar: React.FC<any> = () => {
   return (
     <nav>
         <ContentContainer className={styles['navbar-cont']}>
@@ -18,6 +18,7 @@ export const Navbar = () => {
                     <a href='#/' className={styles.link}>Contact Us</a>
                     <a href='#/' className={styles.link}>About Us</a>
                 </div>
+
             </div>
         </ContentContainer>
     </nav>

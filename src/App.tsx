@@ -9,12 +9,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div id ='app-cont'>
+    <div id= 'app-cont'>
 
       <div id= 'content-cont'>
 
         <Navbar />
-        
+
       </div>
       
     </div>

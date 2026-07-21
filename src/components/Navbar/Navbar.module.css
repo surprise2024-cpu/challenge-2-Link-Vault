@@ -1,0 +1,7 @@
+.content {
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    background-color: blueviolet;
+    color: #fff;
+}
