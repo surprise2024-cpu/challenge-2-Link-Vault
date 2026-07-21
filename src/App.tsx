@@ -12,7 +12,7 @@ function App() {
   return (
     <div id= 'app-cont'>
 
-      <div id= 'content-cont'>
+      <div id= 'scrollable'>
 
         <Navbar />
 
