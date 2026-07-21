@@ -27,6 +27,8 @@
     animation: changeBackground 15s infinite;
     transition: background-image 3s ease-in-out;
 
+    filter: blur(5px);
+
 }
 
 .blur-overlay {
