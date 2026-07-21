@@ -4,6 +4,10 @@ import styles from './Footer.module.css'
 import { ContentContainer } from '../../ContentContainer'
 import { Text } from '../Text/Text'
 
+import tweet from '../../assets/icons8-x-twitter-50.png'
+import insta from '../../assets/icons8-instagram-50.png'
+import face from '../../assets/icons8-facebook-50.png'
+
 export const Footer = () => {
   return (
     <footer>
@@ -12,20 +16,17 @@ export const Footer = () => {
 
             <div className={styles['part1']}>
 
-                <div className={styles['heading']}>
-
-                    <Text variant='h2'>Vault Link</Text>
-
-                </div>
-
-                <div className={styles['sentence']}>
-                    <Text variant='p' >Vault Link up and up</Text>
-                </div>
+                
+                <Text variant='h2' className={styles['heading']}>Vault Link</Text>
+                <Text variant='p' className={styles['sentence']} >Vault Link, we keep your links safe and sound.</Text>
+                
 
                 <div className={styles['socials']}>
-                    <img src='' alt='just an image'/>
-                    <img src='' alt='just an image'/>
-                    <img src='' alt='just an image'/>
+
+                    <img src={tweet} className={styles['image']} alt='twitter'/>
+                    <img src={face} className={styles['image']} alt='facebook'/>
+                    <img src={insta} className={styles['image']} alt='instagram'/>
+
                 </div>
 
             </div>
