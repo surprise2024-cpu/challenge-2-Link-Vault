@@ -2,11 +2,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    /*margin: 0;
-    padding: 0;*/
 
-    overflow-x: hidden; /*hides messy blured edges*/
-    background-color: #111; /*fallback color*/
 
 }
 
@@ -17,9 +13,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 1;
 
-    /*background-image: url('assets/vault1.jpg');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,10 +31,6 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 2;
-
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
 
     background-color: rgba(0, 0, 0, 0.9);
 }
@@ -69,7 +59,7 @@
 }
 
 #scrollable {
-    z-index: 3;
+
 }
 
 p {
