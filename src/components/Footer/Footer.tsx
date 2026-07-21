@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 import { ContentContainer } from '../../ContentContainer'
 import { Text } from '../Text/Text'
 
-export const footer = () => {
+export const Footer = () => {
   return (
     <footer>
 
@@ -33,7 +33,7 @@ export const footer = () => {
                     <a href='#/' >Home</a>
                     <a href='#/' >Contact Us</a>
                     <a href='#/' >About Us</a>
-                    
+
                 </div>
 
             </div>
