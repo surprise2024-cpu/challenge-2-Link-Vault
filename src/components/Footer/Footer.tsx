@@ -8,7 +8,7 @@ import tweet from '../../assets/icons8-x-twitter-50.png'
 import insta from '../../assets/icons8-instagram-50.png'
 import face from '../../assets/icons8-facebook-50.png'
 
-export const Footer = () => {
+export const Footer: React.FC<any> = () => {
   return (
     <footer>
 

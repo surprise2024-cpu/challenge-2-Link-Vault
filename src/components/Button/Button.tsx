@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const Button = () => {
+import styles from './Button.module.css'
+
+export const Button: React.FC<any> = () => {
   return (
-    <button>
-        Button
+    <button className={styles['button-cont']}>
+        SAVE
     </button>
   )
 }

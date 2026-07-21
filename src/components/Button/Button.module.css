@@ -1,0 +1,11 @@
+.button-cont {
+    height: 52px;
+    width: 100px;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+}
+
+.button-cont:hover {
+    filter: brightness(1.5);
+}
