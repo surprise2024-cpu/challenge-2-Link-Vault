@@ -13,7 +13,9 @@ export const Footer = () => {
             <div className={styles['part1']}>
 
                 <div className={styles['heading']}>
-                    <Text variant='h2' >Vault Link</Text>
+
+                    <Text variant='h2'>Vault Link</Text>
+
                 </div>
 
                 <div className={styles['sentence']}>
@@ -30,12 +32,13 @@ export const Footer = () => {
 
             <div className={styles['part2']}>
 
+                <Text variant='span' className={styles['heading']}>Quick Links: </Text>
 
                 <div className={styles['quick-links']}>
 
-                    <a href='#/' >Home</a>
-                    <a href='#/' >Contact Us</a>
-                    <a href='#/' >About Us</a>
+                    <a href='#/' className={styles.link}>Home</a>
+                    <a href='#/' className={styles.link}>Contact Us</a>
+                    <a href='#/' className={styles.link}>About Us</a>
 
                 </div>
 

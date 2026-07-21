@@ -11,7 +11,7 @@ export const Navbar: React.FC<any> = () => {
 
             <div className={styles['content']}>
 
-                <Text variant={'h2'}>Navbar</Text>
+                <Text variant={'h2'} className={styles['logo']}>Vault Link</Text>
                 
                 <div className={styles.links}>
                     <a href='#/' className={styles.link}>Home</a>
@@ -20,7 +20,7 @@ export const Navbar: React.FC<any> = () => {
                 </div>
 
             </div>
-            
+
         </ContentContainer>
     </nav>
   )

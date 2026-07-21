@@ -19,6 +19,13 @@ nav {
     gap: 32px;
 }
 
+.logo {
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
+    white-space: nowrap;
+}
+
 .links {
     display: flex;
     align-items: center;
@@ -40,5 +47,4 @@ nav {
 
 .link:hover {
     text-decoration: underline;
-
 }
