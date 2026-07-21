@@ -9,19 +9,60 @@ export const Body: React.FC<any> = () => {
   return (
     <ContentContainer className={styles['body-cont']}>
 
-        <section>
+        <section className={styles['first-sect']}>
+
             <div>
+
                 <Text variant='h2'>Store</Text>
+
                 <Text variant='span'>Store</Text>
-                <div>
-                    <Search />
-                </div>
+
+                <Search />
+
             </div>
+
         </section>
-        <section>
-            <div>
-                david
+
+        <section className={styles['sec-sect']}>
+
+            <div className={styles['statistics']}>
+
+                <div className={styles['stat-cont']}>
+
+                    <div className={styles['stat']}>
+                        <Text variant='h2'  >Total Links</Text>
+                        <Text variant='h2'  >Total Links</Text>
+                        <Text variant='h2'  >Total Links</Text>
+                        <Text variant='h2'  >Total Links</Text>
+                        <Text variant='h2'  >Total Links</Text>
+                    </div>
+                    
+
+
+                </div>
+
+                <div className={styles['stat-cont']}>
+
+                    <div className={styles['stat']}>
+
+                        <Text variant='h2'  >Book Mark</Text>
+                        <Text variant='h2'  >Book Marks</Text>
+                        <Text variant='h2'  >Book Mark</Text>
+                        <Text variant='h2'  >Book Marks</Text>
+                        <Text variant='h2'  >Book Mark</Text>
+
+                    </div>
+
+                </div>
+
+                <div className={styles['stat-cont']}>
+
+                    div
+
+                </div>
+
             </div>
+
         </section>
 
     </ContentContainer>
