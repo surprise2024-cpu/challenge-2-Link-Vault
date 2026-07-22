@@ -5,6 +5,8 @@ import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
 import { Body } from './components/Body/Body'
 
+import { Routes, Route } from 'react-router'
+
 function App() {
 
 
@@ -20,6 +22,9 @@ function App() {
         
         <Body />
 
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
 
       </div>
 
