@@ -1,61 +1,9 @@
 #app-cont {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /*background-color: #fff;*/
-}
-
-
-#bg-slideshow {
-    padding: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    animation: changeBackground 15s infinite;
-    transition: background-image 3s ease-in-out;
-
-    filter: blur(5px);
-
-}
-
-.blur-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-
-@keyframes changeBackground {
-    0%, 100% {
-        background-image: url('assets/vault1.jpg');
-    }
-
-    20% {
-        background-image: url('assets/vault2.jpg');
-    }
-
-    40% {
-        background-image: url('assets/vault3.jpg');
-    }
-
-    60% {
-        background-image: url('assets/vault4.jpg');
-    }
-
-    80% {
-        background-image: url('assets/vault5.jpg');
-    }
+    background-color: #f4f3ef;
 }
 
 #scrollable {

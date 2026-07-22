@@ -31,7 +31,7 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => 
             <span className={styles['stat-value']}>{total}</span>
             <span className={styles['stat-label']}>Total Links</span>
 
-            <Button onClick={handleLinksPage} className={styles['view-btn']}>VIEW TOTAL LINKS</Button>
+            <Button onClick={handleLinksPage} className={styles['view-btn']}>VIEW LINKS</Button>
 
         </div>
 

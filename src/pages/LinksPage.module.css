@@ -1,10 +1,11 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 340px));
     gap: 16px;
     padding: 120px 40px 60px;
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .empty {
@@ -15,14 +16,15 @@
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: #ffffff;
+    border: 1px solid #e8e6e0;
     border-radius: 12px;
     padding: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .title {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 22px;
     margin: 0 0 6px;
 }
@@ -39,7 +41,7 @@
 }
 
 .description {
-    color: #ccc;
+    color: #5a5650;
     font-size: 14px;
     margin: 10px 0 0;
 }
@@ -84,4 +86,11 @@
 .delete-btn {
     background-color: #b02a2a;
     color: #fff;
+}
+
+
+@media (max-width: 320px) {
+    .actions {
+        flex-direction: column;
+    }
 }

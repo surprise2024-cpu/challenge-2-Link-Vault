@@ -11,9 +11,11 @@
 
     gap: 20px;
     padding: 32px;
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: #ffffff;
+    border: 1px solid #e8e6e0;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    padding: 32px;
 }
 
 .field {
@@ -23,7 +25,7 @@
 }
 
 .field-label {
-    color: #aaa;
+    color: black;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
@@ -32,7 +34,7 @@
 
 .form-input, .form-textarea {
     height: 46px;
-    background-color: #fff;
+    background-color: #fafaf8;
     color: black;
 
     border: 2px solid #444;
@@ -46,8 +48,8 @@
 }
 
 .form-input:focus, .form-textarea:focus {
-    outline: none;
-    border-color: green;
+    background-color: #FFF;
+    border-color: #2d7a3e;
     box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.2);
 }
 
