@@ -68,7 +68,11 @@
     font-weight: 600;
 }
 
-
+@media (max-width: 768px) {
+    .link-form {
+        margin-top: 20px;
+    }
+}
 
 
 

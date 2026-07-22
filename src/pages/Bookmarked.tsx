@@ -19,7 +19,7 @@ export const Bookmarked: React.FC = () => {
   return (
     <div className={styles['list']}>
         {
-          bookmarks.map((bookmark) => (
+          bookmarked.map((bookmark) => (
 
             <div key={bookmark.id} className={styles['card']} >
 
