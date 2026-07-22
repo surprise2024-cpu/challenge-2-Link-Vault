@@ -1,6 +1,6 @@
 .button-cont {
     height: 52px;
-    width: 100px;
+    width: 100%;
     background-color: green;
     border: none;
     cursor: pointer;
