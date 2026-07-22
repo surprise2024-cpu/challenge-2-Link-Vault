@@ -15,12 +15,12 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => 
 
     const handleLinksPage = () => {
 
-        navigate('/LinksPage')
+        navigate('/links-page')
     }
 
     const handleBookmarkedPage = () => {
 
-        navigate('/Bookmarked')
+        navigate('/bookmarked-page')
     }
 
   return (
