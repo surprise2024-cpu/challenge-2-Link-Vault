@@ -2,6 +2,7 @@ import React from 'react'
 
 import styles from './StatsPanel.module.css'
 import { Button } from '../Button/Button'
+import { useNavigate } from 'react-router'
 
 type StatsPanelProps = {
     total: number
@@ -10,8 +11,15 @@ type StatsPanelProps = {
 
 export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => {
 
-    function handleSave(): void 
-    {
+    const navigate = useNavigate()
+
+    const handleLinksPage = () => {
+
+        navigate('/LinksPage')
+    }
+
+    const handleBookmarkedPage = () => {
+
         throw new Error('Function not implemented.')
     }
 
@@ -23,7 +31,7 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => 
             <span className={styles['stat-value']}>{total}</span>
             <span className={styles['stat-label']}>Total Links</span>
 
-            <Button onClick={handleSave} className={styles['view-btn']}>VIEW TOTAL LINKS</Button>
+            <Button onClick={handleLinksPage} className={styles['view-btn']}>VIEW TOTAL LINKS</Button>
 
         </div>
 
@@ -34,7 +42,7 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => 
             <span className={styles['stat-value']}>{bookmarked}</span>
             <span className={styles['stat-label']}>Bookmarked</span>
 
-            <Button onClick={handleSave} className={styles['view-btn']}>VIEW BOOKMARKED LINKS</Button>
+            <Button onClick={handleBookmarkedPage} className={styles['view-btn']}>VIEW BOOKMARKED LINKS</Button>
         </div>
 
         

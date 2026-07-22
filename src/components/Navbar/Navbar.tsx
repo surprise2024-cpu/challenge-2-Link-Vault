@@ -14,9 +14,9 @@ export const Navbar: React.FC<any> = () => {
                 <Text variant={'h2'} className={styles['logo']}>Vault Link</Text>
                 
                 <div className={styles.links}>
-                    <a href='#/' className={styles.link}>Home</a>
-                    <a href='#/' className={styles.link}>Contact Us</a>
-                    <a href='#/' className={styles.link}>About Us</a>
+                    <a href='/' className={styles.link}>Home</a>
+                    <a href='/contact-us' className={styles.link}>Contact Us</a>
+                    <a href='/about-us' className={styles.link}>About Us</a>
                 </div>
 
             </div>
