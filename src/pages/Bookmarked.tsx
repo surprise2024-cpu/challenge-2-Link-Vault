@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Bookmarked = () => {
+export const Bookmarked: React.FC<any> = () => {
   return (
     <div>
         Bookmarked

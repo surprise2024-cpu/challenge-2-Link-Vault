@@ -2,7 +2,6 @@ import React from 'react'
 
 import { ContentContainer } from '../../ContentContainer'
 import styles from './Body.module.css'
-import { Text } from '../Text/Text'
 import { Search } from '../Search/Search'
 import { StatsPanel } from '../StatsPanel/StatsPanel'
 import { useBookmarks } from '../hooks/useBookmarks'

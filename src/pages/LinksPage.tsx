@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-import { Text } from '../components/Text/Text'
 import type { Bookmark } from '../components/library/types'
 
+export type LinksPageProps = {
+  url: string
+  title: string
+  description: string
+}
 
-export const LinksPage = () => {
+export const LinksPage: React.FC<LinksPageProps> = () => {
 
   const [ linkData, setLinkData ] = useState<Bookmark | null>(null) 
 
