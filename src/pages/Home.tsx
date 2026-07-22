@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const Home: React.FC<any> = () => {
+import { Body } from '../components/Body/Body'
+
+export const Home: React.FC = () => {
   return (
     <div>
-        Home
+        <Body />
     </div>
   )
 }

@@ -22,12 +22,10 @@ function App() {
       <div id='scrollable'>
 
         <Navbar />
-        
-        <Body />
 
         <Routes>
           <Route index element={<Home />} />
-          <Route path='links-page' element={<LinksPage url={'ffff'} title={'ddfddd'} description={'adfvadfvdf'} />} />
+          <Route path='links-page' element={<LinksPage  />} />
           <Route path='bookmarked-page' element={<Bookmarked />} />
         </Routes>
 
