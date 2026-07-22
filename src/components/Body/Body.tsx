@@ -17,9 +17,9 @@ const { bookmarks, add, stats } = useBookmarks()
 
             <div>
 
-                <Text variant='h2'>Store</Text>
+                {/*<Text variant='h2'>Store</Text>
 
-                <Text variant='span'>Store</Text>
+                <Text variant='span'>Store</Text>*/}
 
                 <Search onAdd={add}/>
 

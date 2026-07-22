@@ -96,7 +96,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
       </div>
       
 
-      <Button onClick={handleSave} className={styles['submit-btn']} />
+      <Button onClick={handleSave} className={styles['submit-btn']}>SAVE</Button>
 
     </div>
   )
