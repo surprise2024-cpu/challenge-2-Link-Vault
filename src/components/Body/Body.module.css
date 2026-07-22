@@ -4,7 +4,11 @@
     justify-content: space-between;
 
     padding-left: 20px;
-    padding-top: 200px;
+    padding-top: 100px;
+}
+
+.first-sect {
+    width: 500px;
 }
 
 

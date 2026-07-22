@@ -29,8 +29,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
     onAdd({ 
       title: title.trim(), 
       url: url.trim(), 
-      description: 
-      description.trim(), 
+      description: description.trim(), 
       tags 
     })
 
