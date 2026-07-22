@@ -16,8 +16,8 @@ function App() {
   return (
     <div id= 'app-cont'>
       
-      {/*<div id='bg-slideshow'></div>*/}
-      {/*<div id='blur-overlay'></div>*/}
+      {/*<div id='bg-slideshow'></div>
+      <div id='blur-overlay'></div>*/}
 
       <div id='scrollable'>
 
@@ -27,7 +27,7 @@ function App() {
 
         <Routes>
           <Route index element={<Home />} />
-          <Route path='links-page' element={<LinksPage />} />
+          <Route path='links-page' element={<LinksPage url={'vdfvfdv'} title={'ddfddd'} description={'adfvadfvdf'} />} />
           <Route path='bookmarked-page' element={<Bookmarked />} />
         </Routes>
 
