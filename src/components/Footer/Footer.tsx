@@ -8,6 +8,8 @@ import tweet from '../../assets/icons8-x-twitter-50.png'
 import insta from '../../assets/icons8-instagram-50.png'
 import face from '../../assets/icons8-facebook-50.png'
 
+import { NavLink } from 'react-router'
+
 export const Footer: React.FC<any> = () => {
   return (
     <footer>
@@ -37,9 +39,9 @@ export const Footer: React.FC<any> = () => {
 
                 <div className={styles['quick-links']}>
 
-                    <a href='#/' className={styles.link}>Home</a>
-                    <a href='#/' className={styles.link}>Contact Us</a>
-                    <a href='#/' className={styles.link}>About Us</a>
+                    <NavLink to={'/'} className={styles.link}>Home</NavLink>
+                    <NavLink to={'/links-page'} className={styles.link}>Links</NavLink>
+                    <NavLink to={'/bookmarked-page'} className={styles.link}>Bookmarked Links</NavLink>
 
                 </div>
 

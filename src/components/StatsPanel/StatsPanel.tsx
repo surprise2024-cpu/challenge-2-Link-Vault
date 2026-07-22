@@ -20,7 +20,7 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => 
 
     const handleBookmarkedPage = () => {
 
-        throw new Error('Function not implemented.')
+        navigate('/Bookmarked')
     }
 
   return (

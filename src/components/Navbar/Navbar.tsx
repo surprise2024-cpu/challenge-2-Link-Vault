@@ -4,6 +4,8 @@ import styles from './Navbar.module.css'
 import { ContentContainer } from '../../ContentContainer'
 import { Text } from '../Text/Text'
 
+import { NavLink } from 'react-router'
+
 export const Navbar: React.FC<any> = () => {
   return (
     <nav>
@@ -14,9 +16,11 @@ export const Navbar: React.FC<any> = () => {
                 <Text variant={'h2'} className={styles['logo']}>Vault Link</Text>
                 
                 <div className={styles.links}>
-                    <a href='/' className={styles.link}>Home</a>
-                    <a href='/contact-us' className={styles.link}>Contact Us</a>
-                    <a href='/about-us' className={styles.link}>About Us</a>
+
+                    <NavLink to={'/'} className={styles.link}>Home</NavLink>
+                    <NavLink to={'/links-page'} className={styles.link}>Links</NavLink>
+                    <NavLink to={'/bookmarked-page'} className={styles.link}>Bookmarked Links</NavLink>
+                
                 </div>
 
             </div>

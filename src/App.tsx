@@ -7,6 +7,8 @@ import { Body } from './components/Body/Body'
 
 import { Routes, Route } from 'react-router'
 import { Home } from './pages/Home'
+import { LinksPage } from './pages/LinksPage'
+import { Bookmarked } from './pages/Bookmarked'
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
 
         <Routes>
           <Route index element={<Home />} />
+          <Route path='links-page' element={<LinksPage />} />
+          <Route path='bookmarked-page' element={<Bookmarked />} />
         </Routes>
 
       </div>
