@@ -88,8 +88,8 @@ export const LinksPage: React.FC = () => {
                 <div className={styles['actions']} >
 
                   <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >{ bookmark.isBookmarked ? 'Bookmarked' : 'Bookmark' }</Button>
-                  <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
                   <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => edit(bookmark.id, bookmark)} >Edit</Button>
+                  <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
                 
                 </div>
 
