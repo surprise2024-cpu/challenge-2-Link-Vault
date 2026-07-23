@@ -2,13 +2,17 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 340px));
     gap: 16px;
-    padding: 50px 40px 60px;
-    max-width: 1200px;
+    padding: 50px 40px 60px 280px; /*240px sidebar + 40px gap*/
+    max-width: 1640px; /*1400px content + 240px sidebar*/
     margin: 0 auto;
     box-sizing: border-box;
 }
 
 .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
     padding: 140px 40px 60px;
     text-align: center;
     color: #999;
@@ -68,7 +72,6 @@
 .actions {
     display: flex;
     gap: 10px;
-    margin-top: 16px;
     margin-top: auto;
 }
 
@@ -101,13 +104,23 @@
 
 }
 
-.bookmark-image {
-    width: 100px;
-    height: 200px;
+.mark-icon {
+    width: 400px;
+    height: 300px;
 }
 
 @media (max-width: 320px) {
     .actions {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .list {
+        padding: 20px 20px 20px;
+    }
+
+    .empty {
+        padding: 100px 20px 40px;
     }
 }

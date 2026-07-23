@@ -1,8 +1,7 @@
 .searchbar-cont {
-    padding-top: 50px;
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    gap: 12px;
 }
 
 .link-form {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import styles from './Search.module.css'
 import { Button } from '../Button/Button'
+import { useAlert } from '../Alert/AlertProvider'
 
 type LinkFormProps = {
   onAdd: (input: {
@@ -18,6 +19,8 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
   const [description, setDescription] = useState('')
   const [tagsInput, setTagsInput] = useState('')
 
+  const { showAlert } = useAlert()
+
   const handleSave = () => {
     if (!title.trim() || !url.trim()) return
 
@@ -32,6 +35,8 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
       description: description.trim(), 
       tags 
     })
+
+    showAlert('Link saved successfully', 'success')
 
     setTitle('')
     setUrl('')

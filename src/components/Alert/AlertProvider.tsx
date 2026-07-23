@@ -5,12 +5,18 @@ import type { ReactNode } from 'react'
 import { Alert } from './Alert'
 import type { AlertData, AlertType, AlertContextType } from '../library/types'
 import styles from './Alert.module.css'
+import { ConfirmDialog } from '../ConfirmDialog/ConfirmDialog'
 
 const AlertContext = createContext<AlertContextType | undefined>(undefined)
 
 export const AlertProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const [alerts, setAlerts] = useState<AlertData[]>([]);
+
+  const [confirmState, setConfirmState] = useState<{
+    message: string
+    resolve: (value: boolean) => void 
+  } | null>()
 
   const showAlert = useCallback((message: string, type: AlertType = 'info') => {
 
@@ -24,8 +30,19 @@ export const AlertProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setAlerts((prev) => prev.filter((alert) => alert.id !== id))
   }, [])
 
+  const confirmAction = useCallback((message: string): Promise<boolean> => {
+    return new Promise((resolve) => {
+      setConfirmState({ message, resolve })
+    })
+  }, [])
+
+  const handleConfirmResult = (result: boolean) => {
+    confirmState?.resolve(result)
+    setConfirmState(null)
+  }
+
   return (
-    <AlertContext.Provider value={{ showAlert }}>
+    <AlertContext.Provider value={{ showAlert, confirmAction }}>
 
       {children}
 
@@ -39,6 +56,15 @@ export const AlertProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         }
 
       </div>
+
+      {
+        confirmState && (
+          <ConfirmDialog message={confirmState.message}
+          onConfirm={() => handleConfirmResult(true)}
+          onCancel={() => handleConfirmResult(false)}/>
+        )
+      }
+
     </AlertContext.Provider>
   )
 }

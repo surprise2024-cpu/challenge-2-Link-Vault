@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 import styles from './Navbar.module.css'
-import { ContentContainer } from '../../ContentContainer'
+
 import { Text } from '../Text/Text'
 
 import { NavLink } from 'react-router'
-import { SearchBar } from '../Search/SearchBar'
+
 import { useBookmarks } from '../hooks/useBookmarks'
 
 export const Navbar: React.FC<any> = () => {
@@ -28,14 +28,8 @@ export const Navbar: React.FC<any> = () => {
     })
 
   return (
-    <nav>
-        <ContentContainer className={styles['navbar-cont']}>
-
-            <div className={styles['content']}>
-
-                <Text variant={'h2'} className={styles['logo']}>Vault Link</Text>
-                
-                <button className={styles['hamburger']}
+    <>
+            <button className={styles['hamburger']}
                     onClick={() => setIsOpen(prev => !prev)}
                     aria-label='Toggle menu'
                     aria-expanded={isOpen}
@@ -43,23 +37,33 @@ export const Navbar: React.FC<any> = () => {
                     <span className={isOpen ? styles['open'] : ''} />
                     <span className={isOpen ? styles['open'] : ''} />
                     <span className={isOpen ? styles['open'] : ''} />
-                </button>
+            </button>
 
-                
-                    {/*<SearchBar value={query} onChange={setQuery}/>*/}
-                 
+            {isOpen && <div className={styles['overlay']} onClick={closeMenu}/>}
 
-                <div className={`${styles.links} ${isOpen ? styles['links-open'] : ''} `}>
+            <nav>
+                <div className={`${styles['sidebar']} ${isOpen ? styles['sidebar-open'] : ''}`}>
 
-                    <NavLink to={'/'} className={styles.link} onClick={closeMenu} >Home</NavLink>
-                    <NavLink to={'/links-page'} className={styles.link} onClick={closeMenu}>Links</NavLink>
-                    <NavLink to={'/bookmarked-page'} className={styles.link} onClick={closeMenu} >Bookmarked Links</NavLink>
-                
+                    <div className={styles['brand']}>
+
+                        <Text variant={'h2'} className={styles['logo']}>Vault Link</Text>
+                        <div className={styles['divider']}/>
+
+                    </div>
+                    
+            
+                    <div className={styles.links}>
+
+                        <NavLink to={'/'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu} >Home</NavLink>
+                        <NavLink to={'/links-page'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu}>Links</NavLink>
+                        <NavLink to={'/bookmarked-page'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu} >Bookmarked Links</NavLink>
+                    
+                    </div>
+
                 </div>
+            </nav>
 
-            </div>
+        </>
 
-        </ContentContainer>
-    </nav>
-  )
+    )
 }

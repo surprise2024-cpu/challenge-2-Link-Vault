@@ -8,16 +8,25 @@ import { NavLink } from 'react-router'
 import { ContentContainer } from '../ContentContainer'
 import { SearchBar } from '../components/Search/SearchBar'
 import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
+import { useAlert } from '../components/Alert/AlertProvider'
+import type { Bookmark } from '../components/library/types'
 
 export const Bookmarked: React.FC = () => {
 
   const { bookmarks, remove, toggleBookmark, edit } = useBookmarks()
 
   const [query, setQuery] = useState('')
+
   
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const { showAlert, confirmAction } = useAlert()
+  const editingBookmark = bookmarks.find(b => b.id === editingId)
+
+  const bookmarked = bookmarks.filter((b) => b.isBookmarked)
+
   const q = query.trim().toLowerCase()
 
-  const filtered = bookmarks.filter(b => {
+  const filtered = bookmarked.filter(b => {
 
       if(!q) return true
       return (
@@ -28,17 +37,33 @@ export const Bookmarked: React.FC = () => {
       )
   })
 
+  const handleDelete = async (id: string) => {
+      const confirmed = await confirmAction('Are you sure you want to delete this link?')
+      if(!confirmed) return 
+      remove(id)
+      showAlert('Link deleted successfully', 'success')
+    }
+  
+    const handleEditSave = (updates: Partial<Bookmark>) => {
+      if(!editingBookmark) return 
+      edit(editingBookmark.id, updates)
+      showAlert('Link updated successfuly', 'success')
+    }
 
-  const bookmarked = bookmarks.filter((b) => b.isBookmarked)
+  
   
   if (bookmarked.length === 0) {
-    return <div className={styles['empty']} >No bookmarked links yet</div>
+    return <div className={styles['empty']} >
+      
+      <img src={mark} alt='bookmark' className={styles['mark-icon']}/>  
+      No bookmarked links yet
+    </div>
   }
 
   return (
     <div className={styles['list-cont']}>
 
-      <ContentContainer className={styles['searchbar-cont']} >
+      <ContentContainer className={styles['searchbar-cont']} maxWidth={1640}>
 
         <SearchBar value={query} onChange={setQuery} placeholder='Bookmarked Search' className={styles['searchbar-cont']}/>
       
@@ -92,8 +117,8 @@ export const Bookmarked: React.FC = () => {
               <div className={styles['actions']} >
 
                 <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >UnBookmark</Button>
-                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => edit(bookmark.id, { } )} >Edit</Button>
-                <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
+                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => handleEditSave(bookmark)} >Edit</Button>
+                <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => handleDelete(bookmark.id)} >DELETE</Button>
                 
               </div>
 

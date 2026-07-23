@@ -1,20 +1,27 @@
 import React, { useState } from 'react'
 
-import type { Bookmark } from '../components/library/types'
 import { useBookmarks } from '../components/hooks/useBookmarks'
 import styles from './LinksPage.module.css'
 import { Text } from '../components/Text/Text'
-import { NavLink } from 'react-router'
 import { Button } from '../components/Button/Button'
 import { SearchBar } from '../components/Search/SearchBar'
 import { ContentContainer } from '../ContentContainer'
 
 import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
+import { EditModal } from '../components/EditModal/EditModal'
+import { useAlert } from '../components/Alert/AlertProvider'
+import type { Bookmark } from '../components/library/types'
 
 export const LinksPage: React.FC = () => {
 
   const {bookmarks, remove, toggleBookmark, edit }  = useBookmarks()
 
+  const [editingId, setEditingId] = useState<string | null>(null)
+
+  const { showAlert, confirmAction } = useAlert()
+
+  const editingBookmark = bookmarks.find(b => b.id === editingId)
+  
   const [query, setQuery] = useState('')
 
   const q = query.trim().toLowerCase()
@@ -30,8 +37,24 @@ export const LinksPage: React.FC = () => {
       )
   })
 
+  const handleDelete = async (id: string) => {
+    const confirmed = await confirmAction('Are you sure you want to delete this link?')
+    if(!confirmed) return 
+    remove(id)
+    showAlert('Link deleted successfully', 'success')
+  }
+
+  const handleEditSave = (updates: Partial<Bookmark>) => {
+    if(!editingBookmark) return 
+    edit(editingBookmark.id, updates)
+    showAlert('Link updated successfuly', 'success')
+  }
+
   if (bookmarks.length === 0) {
-    return <div className={styles['empty']} >No links saved yet</div>
+    return <div className={styles['empty']} >
+      No links saved yet
+      <img src={mark} alt='bookmark' className={styles['mark-icon']}/>
+    </div>
   }
 
 
@@ -39,7 +62,7 @@ export const LinksPage: React.FC = () => {
     
     <div className={styles['list-cont']} >
 
-      <ContentContainer className={styles['searchbar-cont']} >
+      <ContentContainer className={styles['searchbar-cont']} maxWidth={1640}>
 
         <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar-cont']}/>
       
@@ -60,8 +83,6 @@ export const LinksPage: React.FC = () => {
               <div className={styles['empty']}>
                 No links match your search
 
-                <img src={mark} alt='bookmark' />
-
               </div>
 
             ) : filtered.map((bookmark) => 
@@ -71,7 +92,7 @@ export const LinksPage: React.FC = () => {
 
                 <Text variant='h2' className={styles['title']} >{ bookmark.title }</Text>
               
-                <NavLink to={bookmark.url} className={styles['url']} >{bookmark.url}</NavLink>
+                <a href={bookmark.url}  target='_blank' rel='noreferrer' className={styles['url']} >{bookmark.url}</a>
 
                 {bookmark.description && <Text variant='p' className={styles['description']} >{ bookmark.description }</Text> }
 
@@ -93,17 +114,24 @@ export const LinksPage: React.FC = () => {
                 <div className={styles['actions']} >
 
                   <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >{ bookmark.isBookmarked ? 'Bookmarked' : 'Bookmark' }</Button>
-                  <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => edit(bookmark.id, bookmark)} >Edit</Button>
-                  <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
+                  <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => handleEditSave(bookmark)} >Edit</Button>
+                  <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => handleDelete(bookmark.id)} >DELETE</Button>
                 
                 </div>
 
               </div>
             ))
-    
-          
         }
       </div>
+
+        {
+          editingBookmark && (
+            <EditModal bookmark={editingBookmark}
+            onSave={handleEditSave}
+            onClose={() => setEditingId(null)}/>
+          )
+        }
+
     </div>
     
   )

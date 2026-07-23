@@ -14,7 +14,7 @@ export const Footer: React.FC<any> = () => {
   return (
     <footer>
 
-        <ContentContainer className={styles['footer-cont']}>
+        <ContentContainer className={styles['footer-cont']} maxWidth={1640}>
 
             <div className={styles['part1']}>
 

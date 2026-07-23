@@ -7,10 +7,10 @@ import { StatsPanel } from '../StatsPanel/StatsPanel'
 import { useBookmarks } from '../hooks/useBookmarks'
 
 export const Body: React.FC<any> = () => {
-const { bookmarks, add, stats } = useBookmarks()
+const { add, stats } = useBookmarks()
 
   return (
-    <ContentContainer className={styles['body-cont']}>
+    <ContentContainer className={styles['body-cont']} maxWidth={1640}>
 
         <section className={styles['first-sect']}>
 

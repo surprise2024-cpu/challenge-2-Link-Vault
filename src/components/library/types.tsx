@@ -19,4 +19,5 @@ export type AlertData = {
 
 export type AlertContextType = {
     showAlert: (message: string, type?: AlertType) => void
+    confirmAction: (message: string) => Promise<Boolean>
 }
