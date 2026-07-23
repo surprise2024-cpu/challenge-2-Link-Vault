@@ -39,6 +39,10 @@ export function useBookmarks() {
         bookmarked: bookmarks.filter(b => b.isBookmarked).length,
     }
 
-    return { bookmarks, add, remove, toggleBookmark, stats };
+    const edit = (id: string, updates: Partial<Bookmark>) => {
+        setBookmarks(updateBookmark(id, updates))
+    }
+
+    return { bookmarks, add, remove, toggleBookmark, stats, edit };
 
 }

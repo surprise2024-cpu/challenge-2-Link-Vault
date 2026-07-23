@@ -35,6 +35,21 @@ export const LinksPage: React.FC = () => {
 
         <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar-cont']}/>
       
+        {/*{
+          filtered.length === 0 ? (
+            <div>No links Found</div>
+          ) : (
+            <div className={styles['list']}>
+              {
+                filtered.map((bookmark) => (
+                  <div className={styles['card']}>
+                    
+                  </div>
+                ))
+              }
+            </div>
+          )
+        }*/}
       </ContentContainer>
 
       <div className={styles['list']}>
