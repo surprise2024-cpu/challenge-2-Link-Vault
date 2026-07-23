@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { useBookmarks } from '../components/hooks/useBookmarks'
 import styles from './LinksPage.module.css'
 import { Text } from '../components/Text/Text'
 import { Button } from '../components/Button/Button'
 import { NavLink } from 'react-router'
+import { ContentContainer } from '../ContentContainer'
+import { SearchBar } from '../components/Search/SearchBar'
 
 export const Bookmarked: React.FC = () => {
 
   const { bookmarks, remove, toggleBookmark } = useBookmarks()
+
+  const [query, setQuery] = useState('')
+ 
+  const filtered = bookmarks.filter(b => {
+    const q = query.trim().toLowerCase()
+      if(!q) return true
+      return (
+        b.title.toLowerCase().includes(q) ||
+        b.tags.some(tag => tag.toLowerCase().includes(q))
+      )
+  })
 
   const bookmarked = bookmarks.filter((b) => b.isBookmarked)
   
@@ -17,8 +30,31 @@ export const Bookmarked: React.FC = () => {
   }
 
   return (
-    <div className={styles['list']}>
-        {
+    <div className={styles['list-cont']}>
+
+      <ContentContainer className={styles['searchbar-cont']} >
+
+        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar-cont']}/>
+      
+        {/*{
+          filtered.length === 0 ? (
+            <div>No links Found</div>
+          ) : (
+            <div className={styles['list']}>
+              {
+                filtered.map((bookmark) => (
+                  <div className={styles['card']}>
+                    
+                  </div>
+                ))
+              }
+            </div>
+          )
+        }*/}
+      </ContentContainer>
+
+        <div className={styles['list']}>
+          {
           bookmarked.map((bookmark) => (
 
             <div key={bookmark.id} className={styles['card']} >
@@ -54,6 +90,8 @@ export const Bookmarked: React.FC = () => {
             </div>
           ))
         }
+        </div>  
+        
     </div>
   )
 }
