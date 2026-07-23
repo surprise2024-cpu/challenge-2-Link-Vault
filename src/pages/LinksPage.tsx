@@ -9,10 +9,12 @@ import { Button } from '../components/Button/Button'
 import { SearchBar } from '../components/Search/SearchBar'
 import { ContentContainer } from '../ContentContainer'
 
+import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
+
 export const LinksPage: React.FC = () => {
 
   const {bookmarks, remove, toggleBookmark, edit }  = useBookmarks()
-  
+
   const [query, setQuery] = useState('')
 
   const q = query.trim().toLowerCase()
@@ -52,10 +54,14 @@ export const LinksPage: React.FC = () => {
       
       <div className={styles['list']}>
         {
+          
             filtered.length === 0 ? (
 
               <div className={styles['empty']}>
                 No links match your search
+
+                <img src={mark} alt='bookmark' />
+
               </div>
 
             ) : filtered.map((bookmark) => 

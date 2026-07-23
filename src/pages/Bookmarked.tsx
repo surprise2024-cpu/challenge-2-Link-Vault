@@ -92,7 +92,7 @@ export const Bookmarked: React.FC = () => {
               <div className={styles['actions']} >
 
                 <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >UnBookmark</Button>
-                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => edit(bookmark.id, bookmark)} >Edit</Button>
+                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => edit(bookmark.id, { } )} >Edit</Button>
                 <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
                 
               </div>
