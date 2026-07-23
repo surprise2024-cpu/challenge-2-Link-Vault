@@ -31,15 +31,13 @@ export const LinksPage: React.FC = () => {
     
     <div className={styles['list-cont']} >
 
-      <ContentContainer className={styles['search-bar']} >
+      <ContentContainer className={styles['searchbar-cont']} >
 
-        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['search-bar']}/>
+        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar-cont']}/>
       
       </ContentContainer>
 
       <div className={styles['list']}>
-
-
         {
           bookmarks.map((bookmark) => (
 
