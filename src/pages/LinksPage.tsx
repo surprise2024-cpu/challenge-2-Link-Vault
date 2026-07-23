@@ -12,9 +12,9 @@ import { ContentContainer } from '../ContentContainer'
 export const LinksPage: React.FC = () => {
 
   const {bookmarks, remove, toggleBookmark, edit }  = useBookmarks()
+  
   const [query, setQuery] = useState('')
 
- 
   const q = query.trim().toLowerCase()
 
   const filtered = bookmarks.filter(b => {

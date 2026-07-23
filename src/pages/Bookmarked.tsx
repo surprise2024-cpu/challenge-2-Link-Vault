@@ -11,7 +11,7 @@ import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 
 export const Bookmarked: React.FC = () => {
 
-  const { bookmarks, remove, toggleBookmark } = useBookmarks()
+  const { bookmarks, remove, toggleBookmark, edit } = useBookmarks()
 
   const [query, setQuery] = useState('')
   
@@ -92,6 +92,7 @@ export const Bookmarked: React.FC = () => {
               <div className={styles['actions']} >
 
                 <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >UnBookmark</Button>
+                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => edit(bookmark.id, bookmark)} >Edit</Button>
                 <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
                 
               </div>

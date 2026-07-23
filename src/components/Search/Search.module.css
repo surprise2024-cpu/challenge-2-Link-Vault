@@ -39,7 +39,7 @@
 .form-input, .form-textarea {
     height: 46px;
     background-color: #fafaf8;
-
+    color: #1a1a1a;
     border: 2px solid #444;
     border-radius: 5px;
     background-color: #FFF;
