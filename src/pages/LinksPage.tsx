@@ -53,8 +53,6 @@ export const LinksPage: React.FC = () => {
       
       <div className={styles['list']}>
         {
-          bookmarks.map((bookmark) => (
-            
             filtered.length === 0 ? (
 
               <div className={styles['empty']}>
@@ -98,7 +96,7 @@ export const LinksPage: React.FC = () => {
               </div>
             ))
     
-          ))
+          
         }
       </div>
     </div>

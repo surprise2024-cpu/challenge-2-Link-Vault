@@ -17,13 +17,16 @@ export const Bookmarked: React.FC = () => {
   const q = query.trim().toLowerCase()
 
   const filtered = bookmarks.filter(b => {
-    
+
       if(!q) return true
       return (
         b.title.toLowerCase().includes(q) ||
-        b.tags.some(tag => tag.toLowerCase().includes(q))
+        b.description?.toLowerCase().includes(q) ||
+        b.url.toLowerCase().includes(q) ||
+        b.tags?.some(tag => tag.toLowerCase().includes(q))
       )
   })
+
 
   const bookmarked = bookmarks.filter((b) => b.isBookmarked)
   
@@ -38,28 +41,28 @@ export const Bookmarked: React.FC = () => {
 
         <SearchBar value={query} onChange={setQuery} placeholder='Bookmarked Search' className={styles['searchbar-cont']}/>
       
-        {/*{
-          filtered.length === 0 ? (
-            <div>No links Found</div>
-          ) : (
-            <div className={styles['list']}>
-              {
-                filtered.map((bookmark) => (
-                  <div className={styles['card']}>
-                    
-                  </div>
-                ))
-              }
-            </div>
-          )
-        }*/}
 
       </ContentContainer>
 
-        <div className={styles['list']}>
-          {
-          bookmarked.map((bookmark) => (
+      {
+        q && (
+          <Text variant='p' className={styles['description']} >Showing Search Results</Text>
+        )
+      }
 
+      <div className={styles['list']}>
+        {
+          filtered.length === 0 ? 
+          (
+
+              <div className={styles['empty']}>
+                No links match your search
+              </div>
+
+            ) : filtered.map((bookmark) => 
+            ( 
+          
+              
             <div key={bookmark.id} className={styles['card']} >
 
               <Text variant='h2' className={styles['title']} >{ bookmark.title }</Text>
@@ -87,14 +90,15 @@ export const Bookmarked: React.FC = () => {
 
                 <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >UnBookmark</Button>
                 <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => remove(bookmark.id)} >DELETE</Button>
-              
+                
               </div>
 
             </div>
           ))
-        }
-        </div>  
         
+        }
+
+        </div> 
     </div>
   )
 }
