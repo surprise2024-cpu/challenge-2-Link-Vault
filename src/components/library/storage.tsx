@@ -25,3 +25,17 @@ export function updateBookmark(id: string, updates: Partial<Bookmark>): Bookmark
     localStorage.setItem(KEY, JSON.stringify(all))
     return all;
 }
+
+export function searchBookmarks(query: string): Bookmark[] {
+
+    const all = getBookmarks();
+    const lowerQuery = query.trim().toLowerCase()
+
+    if(!lowerQuery) {
+        return all
+    }
+
+    return all.filter(b => b.title.toLowerCase().includes(lowerQuery) || 
+        b.tags.some(tag => tag.toLowerCase().includes(lowerQuery)))
+
+}
