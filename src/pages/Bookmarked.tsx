@@ -7,6 +7,7 @@ import { Button } from '../components/Button/Button'
 import { NavLink } from 'react-router'
 import { ContentContainer } from '../ContentContainer'
 import { SearchBar } from '../components/Search/SearchBar'
+import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 
 export const Bookmarked: React.FC = () => {
 
@@ -57,7 +58,9 @@ export const Bookmarked: React.FC = () => {
 
               <div className={styles['empty']}>
                 No links match your search
+                
               </div>
+            
 
             ) : filtered.map((bookmark) => 
             ( 

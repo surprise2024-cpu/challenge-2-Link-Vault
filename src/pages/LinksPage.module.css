@@ -101,6 +101,11 @@
 
 }
 
+.bookmark-image {
+    width: 100px;
+    height: 200px;
+}
+
 @media (max-width: 320px) {
     .actions {
         flex-direction: column;
