@@ -12,8 +12,8 @@ export type Bookmark = {
 export type AlertType = 'success' | 'error' | 'warning' | 'info'
 
 export type AlertData = {
-    id: string
-    message: string
+    id: string,
+    message: string,
     type: AlertType
 }
 
