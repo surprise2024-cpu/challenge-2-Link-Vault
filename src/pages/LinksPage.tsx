@@ -6,17 +6,40 @@ import styles from './LinksPage.module.css'
 import { Text } from '../components/Text/Text'
 import { NavLink } from 'react-router'
 import { Button } from '../components/Button/Button'
+import { SearchBar } from '../components/Search/SearchBar'
+import { ContentContainer } from '../ContentContainer'
 
 export const LinksPage: React.FC = () => {
 
   const {bookmarks, remove, toggleBookmark }  = useBookmarks()
+  const [query, setQuery] = useState('')
+ 
+  const filtered = bookmarks.filter(b => {
+    const q = query.trim().toLowerCase()
+      if(!q) return true
+      return (
+        b.title.toLowerCase().includes(q) ||
+        b.tags.some(tag => tag.toLowerCase().includes(q))
+      )
+  })
 
   if (bookmarks.length === 0) {
     return <div className={styles['empty']} >No links saved yet</div>
   }
 
   return (
-    <div className={styles['list']}>
+    
+    <div className={styles['list-cont']} >
+
+      <ContentContainer className={styles['search-bar']} >
+
+        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['search-bar']}/>
+      
+      </ContentContainer>
+
+      <div className={styles['list']}>
+
+
         {
           bookmarks.map((bookmark) => (
 
@@ -53,6 +76,8 @@ export const LinksPage: React.FC = () => {
             </div>
           ))
         }
+      </div>
     </div>
+    
   )
 }
