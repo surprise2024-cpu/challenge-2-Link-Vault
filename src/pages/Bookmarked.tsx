@@ -13,9 +13,11 @@ export const Bookmarked: React.FC = () => {
   const { bookmarks, remove, toggleBookmark } = useBookmarks()
 
   const [query, setQuery] = useState('')
- 
+  
+  const q = query.trim().toLowerCase()
+
   const filtered = bookmarks.filter(b => {
-    const q = query.trim().toLowerCase()
+    
       if(!q) return true
       return (
         b.title.toLowerCase().includes(q) ||
@@ -51,6 +53,7 @@ export const Bookmarked: React.FC = () => {
             </div>
           )
         }*/}
+
       </ContentContainer>
 
         <div className={styles['list']}>
