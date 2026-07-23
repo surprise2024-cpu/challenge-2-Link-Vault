@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import type { Bookmark } from '../components/library/types'
 import { useBookmarks } from '../components/hooks/useBookmarks'
@@ -32,7 +32,6 @@ export const LinksPage: React.FC = () => {
     return <div className={styles['empty']} >No links saved yet</div>
   }
 
-  
 
   return (
     

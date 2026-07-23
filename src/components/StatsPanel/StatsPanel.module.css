@@ -37,10 +37,23 @@
 .view-btn {
     height: 40px;
     width: 200px;
-    color: #fff;
+    color: #374151;
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.3px;
     cursor: pointer;
     padding: 0;
+    background: #f3f4f6;
+}
+
+.view2-btn {
+    height: 40px;
+    width: 200px;
+    color: #374151;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    padding: 0;
+    background: #f3f4f6;
 }
