@@ -34,7 +34,7 @@ export const Bookmarked: React.FC = () => {
 
       <ContentContainer className={styles['searchbar-cont']} >
 
-        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar-cont']}/>
+        <SearchBar value={query} onChange={setQuery} placeholder='Bookmarked Search' className={styles['searchbar-cont']}/>
       
         {/*{
           filtered.length === 0 ? (

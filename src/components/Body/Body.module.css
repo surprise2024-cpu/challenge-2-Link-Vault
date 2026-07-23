@@ -1,12 +1,12 @@
 .body-cont {
     display: grid;
     grid-template-columns: 500px 1fr;
-    align-items: start;
+    align-items: center;
     justify-content: flex-start;
 
-    gap: 40px;
+    gap: 10px;
 
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 180px);
     padding: 40px;
     box-sizing: border-box;
 }
@@ -35,7 +35,6 @@
 @media (max-width: 1023px) {
     .body-cont {
         grid-template-columns: 440px 1fr;
-        gap: 24px;
         padding: 24px;
     }
 
