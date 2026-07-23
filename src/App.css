@@ -4,12 +4,12 @@
     display: flex;
     flex-direction: column;
     background-color: #f4f3ef;
-    font-family: 'Griffy', sans-serif;
+    font-family: 'Intel One Mono', sans-serif;
 }
 
 #scrollable {
     flex: 1; 
-    font-family: 'Griffy', sans-serif;
+    font-family: 'Intel One Mono', sans-serif;
 }
 
 p {
@@ -18,5 +18,5 @@ p {
 
 h1 {
     font-weight: 800; 
-    font-family: 'Griffy', sans-serif;
+    font-family: 'Intel One Mono', sans-serif;
 }
