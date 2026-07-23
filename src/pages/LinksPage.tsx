@@ -114,7 +114,7 @@ export const LinksPage: React.FC = () => {
                 <div className={styles['actions']} >
 
                   <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >{ bookmark.isBookmarked ? 'Bookmarked' : 'Bookmark' }</Button>
-                  <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => handleEditSave(bookmark)} >Edit</Button>
+                  <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => setEditingId(bookmark.id)} >Edit</Button>
                   <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => handleDelete(bookmark.id)} >DELETE</Button>
                 
                 </div>

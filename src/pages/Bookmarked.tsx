@@ -10,6 +10,7 @@ import { SearchBar } from '../components/Search/SearchBar'
 import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 import { useAlert } from '../components/Alert/AlertProvider'
 import type { Bookmark } from '../components/library/types'
+import { EditModal } from '../components/EditModal/EditModal'
 
 export const Bookmarked: React.FC = () => {
 
@@ -117,7 +118,7 @@ export const Bookmarked: React.FC = () => {
               <div className={styles['actions']} >
 
                 <Button className={styles['action-btn'] + ' ' + styles['bookmark-btn']} onClick={() => toggleBookmark(bookmark.id) } >UnBookmark</Button>
-                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => handleEditSave(bookmark)} >Edit</Button>
+                <Button className={styles['action-btn'] + ' ' + styles['edit-btn']} onClick={() => setEditingId(bookmark.id)} >Edit</Button>
                 <Button className={styles['action-btn'] + ' ' + styles['delete-btn']} onClick={() => handleDelete(bookmark.id)} >DELETE</Button>
                 
               </div>
@@ -127,7 +128,15 @@ export const Bookmarked: React.FC = () => {
         
         }
 
-        </div> 
+        </div>
+
+         {
+            editingBookmark && (
+              <EditModal bookmark={editingBookmark}
+              onSave={handleEditSave}
+              onClose={() => setEditingId(null)}/>
+            )
+          }
     </div>
   )
 }
