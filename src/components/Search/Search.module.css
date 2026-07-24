@@ -67,6 +67,15 @@
     letter-spacing: 1px;
     font-weight: 600;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.submit-btn img {
+    width: 30px;
+    
 }
 
 .search-cont {

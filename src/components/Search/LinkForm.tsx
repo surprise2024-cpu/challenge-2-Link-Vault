@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styles from './Search.module.css'
 import { Button } from '../Button/Button'
 import { useAlert } from '../Alert/AlertProvider'
+import save from '../../assets/add.png'
 
 type LinkFormProps = {
   onAdd: (input: {
@@ -143,7 +144,10 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
       </div>
       
 
-      <Button onClick={handleSave} className={styles['submit-btn']}>SAVE LINK</Button>
+      <Button onClick={handleSave} className={styles['submit-btn']}>
+        <img src={save} />
+        SAVE LINK
+        </Button>
 
     </form>
   )

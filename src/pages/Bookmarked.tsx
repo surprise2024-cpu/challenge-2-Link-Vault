@@ -100,7 +100,7 @@ export const Bookmarked: React.FC = () => {
 
               <Text variant='h2' className={styles['title']} >{ bookmark.title }</Text>
             
-              <NavLink to={bookmark.url} className={styles['url']} >{bookmark.url}</NavLink>
+              <a href={bookmark.url}  target='_blank' rel='noreferrer' className={styles['url']} >{bookmark.url}</a>
 
               {bookmark.description && <Text variant='p' className={styles['description']} >{ bookmark.description }</Text> }
 
