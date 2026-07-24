@@ -13,15 +13,48 @@ type LinkFormProps = {
   }) => void
 }
 
+//const URL_REGEX = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/i;
+
 export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
   const [tagsInput, setTagsInput] = useState('')
 
+  /*validation*/
+  const [urlError, setUrlError] = useState<string>('')
+
+  const isValidUrl = (value: string): boolean => {
+
+    let absoluteUrl = value.trim();
+
+    if (!/^https?:\/\//i.test(absoluteUrl)) {
+
+      absoluteUrl = `httpss://${absoluteUrl}`;
+      
+    }
+
+    try {
+      const parsedUrl = new URL(absoluteUrl);
+
+      return parsedUrl.hostname.includes('.');
+    }
+    catch {
+      return false;
+    }
+  };
+
   const { showAlert } = useAlert()
 
   const handleSave = () => {
+
+    if (url && !isValidUrl(url)) {
+      setUrlError('Please enter a valid URL.');
+      return;
+    }
+
+    setUrlError('')
+
     if (!title.trim() || !url.trim()) return
 
     const tags = tagsInput
@@ -42,6 +75,9 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
     setUrl('')
     setDescription('')
     setTagsInput('')
+    
+
+    //validation trigger?
 
   }
 
@@ -70,7 +106,13 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
           className={styles['form-input']} 
           value={url} 
           onChange={(e) => setUrl(e.target.value)}
+          style={{ borderColor: urlError ? 'red' : '#ccc' }}
         />
+        {
+          urlError && <span style={{ color: 'red', fontSize: 12, display: 'block', marginTop: 4 }}>
+            {urlError}
+          </span>
+        }
 
       </div>
       
