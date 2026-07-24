@@ -82,7 +82,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
 
 
   return (
-    <div className={styles['link-form']}>
+    <form className={styles['link-form']}>
       <div className={styles['field']}>
 
         <label className={styles['field-label']}>Title</label>
@@ -92,6 +92,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
           className={styles['form-input']} 
           value={title} 
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
 
       </div>
@@ -106,6 +107,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
           value={url} 
           onChange={(e) => setUrl(e.target.value)}
           style={{ borderColor: urlError ? 'red' : '#ccc' }}
+          required
         />
         {
           urlError && <span style={{ color: 'red', fontSize: 12, display: 'block', marginTop: 4 }}>
@@ -143,6 +145,6 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
 
       <Button onClick={handleSave} className={styles['submit-btn']}>SAVE LINK</Button>
 
-    </div>
+    </form>
   )
 }
