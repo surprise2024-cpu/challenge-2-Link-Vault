@@ -13,7 +13,6 @@ type LinkFormProps = {
   }) => void
 }
 
-//const URL_REGEX = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/i;
 
 export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
   const [title, setTitle] = useState('')

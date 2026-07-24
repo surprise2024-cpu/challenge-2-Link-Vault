@@ -1,7 +1,7 @@
 .body-cont {
     display: grid;
     grid-template-columns: 500px 1fr;
-    align-items: start;
+    align-items: center;
     justify-content: flex-start;
     gap: 10px;
     padding: 40px 40px 40px 280px; /*240px sidebar 4 40px gap*/
