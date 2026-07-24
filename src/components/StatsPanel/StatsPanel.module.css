@@ -44,11 +44,12 @@
     letter-spacing: 0.3px;
     cursor: pointer;
     padding: 0;
-    background: #f3f4f6;
+    background: #d3d3d3;
+    border-radius: 20px;
 }
 
 .view2-btn {
-    height: 40px;
+    height: 50px;
     width: 100%;
     max-width: 200px;
     color: #374151;
@@ -57,5 +58,6 @@
     letter-spacing: 0.3px;
     cursor: pointer;
     padding: 0;
-    background: #f3f4f6;
+    background: #d3d3d3;
+    border-radius: 20px;
 }

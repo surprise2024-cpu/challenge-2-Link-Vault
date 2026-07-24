@@ -39,7 +39,7 @@
     height: 46px;
     background-color: #fafaf8;
     color: #1a1a1a;
-    border: 2px solid #444;
+    border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #FFF;
     padding: 0 14px;
@@ -67,6 +67,7 @@
     margin-top: 4px;
     letter-spacing: 1px;
     font-weight: 600;
+    border-radius: 30px;
 }
 
 .search-cont {
