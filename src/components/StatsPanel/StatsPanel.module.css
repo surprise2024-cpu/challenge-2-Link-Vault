@@ -49,6 +49,11 @@
     border-radius: 20px;
 }
 
+.view-btn2:hover {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
+}
+
 .view-btn2 {
     height: 50px;
     width: 100%;
@@ -62,4 +67,9 @@
     border: 2px solid green;
     padding: 0;
     border-radius: 30px;
+}
+
+.view-btn:hover {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
 }
