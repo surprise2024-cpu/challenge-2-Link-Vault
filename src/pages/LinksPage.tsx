@@ -71,7 +71,7 @@ export const LinksPage: React.FC = () => {
 
       <ContentContainer className={styles['searchbar-cont']} maxWidth={1640}>
 
-        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar-cont']}/>
+        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={`${styles['searchbar-cont']} ${styles['searchbar-text']}`}/>
       
 
       </ContentContainer>

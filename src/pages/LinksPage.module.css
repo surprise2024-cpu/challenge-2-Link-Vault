@@ -127,11 +127,16 @@
 }
 
 .searchbar-cont {
+    padding-left: 100px;
     width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
 
+}
+
+.searchbar-text{
+    padding-left: 60px;
 }
 
 .short-mess {
@@ -158,5 +163,9 @@
 
     .empty {
         padding: 100px 20px 40px;
+    }
+
+    .searchbar-cont {
+        width: 100px;
     }
 }
