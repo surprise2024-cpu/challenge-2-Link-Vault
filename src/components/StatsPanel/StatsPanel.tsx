@@ -42,7 +42,7 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({ total, bookmarked }) => 
             <span className={styles['stat-value']}>{bookmarked}</span>
             <span className={styles['stat-label']}>Bookmarked</span>
 
-            <Button onClick={handleBookmarkedPage} className={styles['view2-btn']}>VIEW BOOKMARKED LINKS</Button>
+            <Button onClick={handleBookmarkedPage} className={styles['view-btn2']}>VIEW BOOKMARKED LINKS</Button>
         </div>
 
         

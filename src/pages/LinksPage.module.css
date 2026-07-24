@@ -84,6 +84,7 @@
     font-weight: 600;
     font-size: 13px;
     transition: filter 0.15s ease;
+    border-radius: 20px;
 }
 
 .bookmark-btn {
@@ -92,8 +93,23 @@
 }
 
 .delete-btn {
-    background-color: #b02a2a;
-    color: #fff;
+    background: transparent;
+    color: #dc2626;
+    border: 1px solid #d93025;
+}
+
+.delete-btn:hover {
+    background-color: #F8D7DA;
+}
+
+.edit-btn {
+    background: transparent;
+    border: 1px solid #70757a;
+    color: #1f2937;
+}
+
+.edit-btn:hover {
+    background-color: #C8E6C9;
 }
 
 .searchbar-cont {
@@ -103,6 +119,8 @@
     justify-content: center;
 
 }
+
+
 
 .mark-icon {
     width: 400px;

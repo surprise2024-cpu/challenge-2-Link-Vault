@@ -44,11 +44,12 @@
     letter-spacing: 0.3px;
     cursor: pointer;
     padding: 0;
-    background: #d3d3d3;
+    background: transparent;
+    border: 2px solid green;
     border-radius: 20px;
 }
 
-.view2-btn {
+.view-btn2 {
     height: 50px;
     width: 100%;
     max-width: 200px;
@@ -57,7 +58,8 @@
     font-size: 13px;
     letter-spacing: 0.3px;
     cursor: pointer;
+    background: transparent;
+    border: 2px solid green;
     padding: 0;
-    background: #d3d3d3;
-    border-radius: 20px;
+    border-radius: 30px;
 }
