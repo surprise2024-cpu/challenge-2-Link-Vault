@@ -4,28 +4,29 @@ import { useBookmarks } from '../components/hooks/useBookmarks'
 import styles from './LinksPage.module.css'
 import { Text } from '../components/Text/Text'
 import { Button } from '../components/Button/Button'
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import { ContentContainer } from '../ContentContainer'
 import { SearchBar } from '../components/Search/SearchBar'
 import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 import { useAlert } from '../components/Alert/AlertProvider'
 import type { Bookmark } from '../components/library/types'
 import { EditModal } from '../components/EditModal/EditModal'
+import add from '../assets/plus.png'
 
 export const Bookmarked: React.FC = () => {
 
   const { bookmarks, remove, toggleBookmark, edit } = useBookmarks()
-
   const [query, setQuery] = useState('')
-
-  
   const [editingId, setEditingId] = useState<string | null>(null)
   const { showAlert, confirmAction } = useAlert()
   const editingBookmark = bookmarks.find(b => b.id === editingId)
-
   const bookmarked = bookmarks.filter((b) => b.isBookmarked)
-
   const q = query.trim().toLowerCase()
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/');
+  } 
 
   const filtered = bookmarked.filter(b => {
 
@@ -53,13 +54,16 @@ export const Bookmarked: React.FC = () => {
 
   
   
-  if (bookmarked.length === 0) {
-    return <div className={styles['empty']} >
-      
-      <img src={mark} alt='bookmark' className={styles['mark-icon']}/>  
-      No bookmarked links yet
-    </div>
-  }
+  if (bookmarks.length === 0) {
+      return <div className={styles['empty']} >
+        <img src={mark} alt='bookmark' className={styles['mark-icon']}/>
+        <Text variant='h2' className={styles['short-mess']}>Add your first link today</Text>
+        <Button className={styles['empty-btn']} onClick={handleRedirect}>
+          <img src={add} alt='add icon' />
+          Add Link
+        </Button>
+      </div>
+    }
 
   return (
     <div className={styles['list-cont']}>

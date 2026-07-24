@@ -11,20 +11,23 @@ import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 import { EditModal } from '../components/EditModal/EditModal'
 import { useAlert } from '../components/Alert/AlertProvider'
 import type { Bookmark } from '../components/library/types'
+import add from '../assets/plus.png'
+import { useNavigate } from 'react-router'
 
 export const LinksPage: React.FC = () => {
 
   const {bookmarks, remove, toggleBookmark, edit }  = useBookmarks()
-
   const [editingId, setEditingId] = useState<string | null>(null)
-
   const { showAlert, confirmAction } = useAlert()
-
   const editingBookmark = bookmarks.find(b => b.id === editingId)
-  
   const [query, setQuery] = useState('')
-
   const q = query.trim().toLowerCase()
+
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/');
+  } 
 
   const filtered = bookmarks.filter(b => {
 
@@ -52,8 +55,12 @@ export const LinksPage: React.FC = () => {
 
   if (bookmarks.length === 0) {
     return <div className={styles['empty']} >
-      No links saved yet
       <img src={mark} alt='bookmark' className={styles['mark-icon']}/>
+      <Text variant='h2' className={styles['short-mess']}>Add your first link today</Text>
+      <Button className={styles['empty-btn']} onClick={handleRedirect}>
+        <img src={add} alt='add icon' />
+        Add Link
+      </Button>
     </div>
   }
 
