@@ -28,7 +28,7 @@
 
 @media (min-width: 1200px) {
     .body-cont {
-        max-width: 1640px; /*1400px + 240px, so contect matched 1400px*/
+        max-width: 1640px; /*1400px + 240px, so content matched 1400px*/
         margin: 0 auto;
     }
 }
@@ -47,7 +47,9 @@
 
 @media (max-width: 768px) {
     .body-cont {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         min-height: auto;
         gap: 24px;
         padding: 80px 20px 20px;
@@ -61,6 +63,7 @@
         padding-top: 0;
         justify-content: space-between;
         gap: 16px;
+        margin-left: 80px;
     }
 }
 
