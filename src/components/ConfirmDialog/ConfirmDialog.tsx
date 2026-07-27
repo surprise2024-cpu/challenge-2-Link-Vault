@@ -18,9 +18,9 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ message, onConfirm
             <p className={styles['message']} >{message}</p>
 
             <div className={styles['actions']} >
-
-                <Button className={styles['confirm-btn']} onClick={onConfirm} >Yes</Button>
+                
                 <Button className={styles['cancel-btn']} onClick={onCancel} >Cancel</Button>
+                <Button className={styles['confirm-btn']} onClick={onConfirm} >Yes</Button>
 
             </div>
 

@@ -32,6 +32,7 @@ export function useBookmarks() {
         const target = bookmarks.find(b => b.id === id)
         if (!target) return
         setBookmarks(updateBookmark(id, { isBookmarked: !target.isBookmarked }))
+        showAlert('Link successfuly bookmarked', 'success')
     }
 
     const stats = {
@@ -45,4 +46,8 @@ export function useBookmarks() {
 
     return { bookmarks, add, remove, toggleBookmark, stats, edit };
 
+}
+
+function showAlert(arg0: string, arg1: string) {
+    throw new Error("Function not implemented.");
 }
