@@ -26,7 +26,7 @@ export const LinksPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate('/');
+    navigate('/form-page');
   } 
 
   const filtered = bookmarks.filter(b => {

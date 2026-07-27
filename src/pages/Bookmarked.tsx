@@ -25,7 +25,7 @@ export const Bookmarked: React.FC = () => {
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate('/');
+    navigate('/form-page');
   } 
 
   const filtered = bookmarked.filter(b => {

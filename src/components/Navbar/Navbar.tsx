@@ -6,8 +6,6 @@ import { Text } from '../Text/Text'
 
 import { NavLink } from 'react-router'
 
-import { useBookmarks } from '../hooks/useBookmarks'
-
 export const Navbar: React.FC<any> = () => {
 
     const[isOpen, setIsOpen] = useState(false)
@@ -42,8 +40,10 @@ export const Navbar: React.FC<any> = () => {
                     <div className={styles.links}>
 
                         <NavLink to={'/'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu} >Home</NavLink>
-                        <NavLink to={'/links-page'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu}>Links</NavLink>
                         <NavLink to={'/bookmarked-page'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu} >Bookmarked Links</NavLink>
+                        <NavLink to={'/form-page'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu} >Form</NavLink>
+                        {/*<NavLink to={'/links-page'} className={ ({isActive}) => `${styles.link} ${isActive ? styles['link-active'] : ''}`} onClick={closeMenu}>Links</NavLink>*/}
+                        
                     
                     </div>
 

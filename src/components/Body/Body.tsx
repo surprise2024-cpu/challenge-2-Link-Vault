@@ -6,7 +6,7 @@ import { Search } from '../Search/Search'
 import { StatsPanel } from '../StatsPanel/StatsPanel'
 import { useBookmarks } from '../hooks/useBookmarks'
 
-export const Body: React.FC<any> = () => {
+export const Body: React.FC = () => {
 const { add, stats } = useBookmarks()
 
   return (

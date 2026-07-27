@@ -4,8 +4,8 @@ import './App.css'
 import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
 
-import { Routes, Route } from 'react-router'
-import { Home } from './pages/Home'
+import { Routes, Route} from 'react-router'
+import { FormPage } from './pages/FormPage'
 import { LinksPage } from './pages/LinksPage'
 import { Bookmarked } from './pages/Bookmarked'
 
@@ -20,9 +20,11 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route index element={<Home />} />
-          <Route path='links-page' element={<LinksPage  />} />
+
+          <Route index element={<LinksPage />} />
+          <Route path='form-page' element={<FormPage />} />
           <Route path='bookmarked-page' element={<Bookmarked />} />
+
         </Routes>
 
       </div>
