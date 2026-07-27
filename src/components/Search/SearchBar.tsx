@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import styles from './Search.module.css'
 import { Text } from '../Text/Text'
@@ -15,7 +15,6 @@ type SearchbarProps = {
 
 export const SearchBar: React.FC<SearchbarProps> = ({ value, onChange, placeholder, className }) => {
 
-  
   const navigate = useNavigate();
 
   const handleRedirect = () => {
