@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 
 import styles from './Search.module.css'
 import { Text } from '../Text/Text'
+import { useNavigate } from 'react-router'
+import { Button } from '../Button/Button'
+import add from '../../assets/plus.png'
 
 type SearchbarProps = {
     value: string
@@ -13,6 +16,12 @@ type SearchbarProps = {
 export const SearchBar: React.FC<SearchbarProps> = ({ value, onChange, placeholder, className }) => {
 
   
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/form-page');
+  } 
+  
   return (
     <div className={styles['searchbar-cont']}>
 
@@ -22,6 +31,10 @@ export const SearchBar: React.FC<SearchbarProps> = ({ value, onChange, placehold
             value={value} onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder} 
         />
+        <Button className={styles['empty-btn']} onClick={handleRedirect}>
+          <img src={add} alt='add icon' />
+          Add Link
+        </Button>
 
     </div>
   )
