@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Bookmark } from "../library/types";
 import { getBookmarks, saveBookmark, deleteBookmark, updateBookmark } from "../library/storage";
+import { useAlert } from "../Alert/AlertProvider";
 
 export type AddInput = {
     title: string
@@ -11,6 +12,7 @@ export type AddInput = {
 
 export function useBookmarks() {
     const [bookmarks, setBookmarks] = useState<Bookmark[]>(getBookmarks());
+    const { showAlert, confirmAction } = useAlert()
 
     const add = ({url, title, description = '', tags = [] }: AddInput) => {
         const bookmark: Bookmark = {
@@ -48,6 +50,4 @@ export function useBookmarks() {
 
 }
 
-function showAlert(arg0: string, arg1: string) {
-    throw new Error("Function not implemented.");
-}
+
