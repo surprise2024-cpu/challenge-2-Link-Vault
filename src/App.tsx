@@ -14,9 +14,6 @@ function App() {
 
   return (
     <div id= 'app-cont'>
-      
-      {/*<div id='bg-slideshow'></div>
-      <div id='blur-overlay'></div>*/}
 
       <div id='scrollable'>
 

@@ -14,19 +14,6 @@ export const Navbar: React.FC<any> = () => {
 
     const closeMenu = () => setIsOpen(false)
 
-    const [query, setQuery] = useState('')
-    
-    const {bookmarks}  = useBookmarks()
-
-    const filtered = bookmarks.filter(b => {
-        const q = query.trim().toLowerCase()
-        if(!q) return true
-        return (
-            b.title.toLowerCase().includes(q) ||
-            b.tags.some(tag => tag.toLowerCase().includes(q))
-        )
-    })
-
   return (
     <>
             <button className={styles['hamburger']}
