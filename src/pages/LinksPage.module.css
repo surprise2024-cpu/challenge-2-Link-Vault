@@ -134,16 +134,15 @@
 }
 
 .searchbar-cont {
-    padding-left: 100px;
+    padding-left: 120px;
+}
+
+.searchbar {
     width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-}
-
-.searchbar-text{
-    padding-left: 60px;
 }
 
 .short-mess {

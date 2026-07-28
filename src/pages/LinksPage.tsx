@@ -69,12 +69,12 @@ export const LinksPage: React.FC = () => {
     
     <div className={styles['list-cont']} >
 
-      <ContentContainer className={styles['searchbar-cont']} maxWidth={1640}>
+        <div className={styles['searchbar-cont']} >
 
-        <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={`${styles['searchbar-cont']} ${styles['searchbar-text']}`}/>
-      
-
-      </ContentContainer>
+          <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar']}/>
+        
+        </div>
+        
 
       {
         q && (

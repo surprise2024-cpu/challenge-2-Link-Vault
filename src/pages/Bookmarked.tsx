@@ -68,13 +68,12 @@ export const Bookmarked: React.FC = () => {
   return (
     <div className={styles['list-cont']}>
 
-      
+        <div className={styles['searchbar-cont']} >
 
-        <SearchBar value={query} onChange={setQuery} placeholder='Bookmarked Search' className={styles['searchbar-cont']}/>
-      
-
-      
-
+          <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar']}/>
+        
+        </div>
+        
       {
         q && (
           <Text variant='p' className={styles['description']} >Showing Search Results</Text>
