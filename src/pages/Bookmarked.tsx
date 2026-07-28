@@ -68,12 +68,12 @@ export const Bookmarked: React.FC = () => {
   return (
     <div className={styles['list-cont']}>
 
-      <ContentContainer className={styles['searchbar-cont']} maxWidth={1640}>
+      
 
         <SearchBar value={query} onChange={setQuery} placeholder='Bookmarked Search' className={styles['searchbar-cont']}/>
       
 
-      </ContentContainer>
+      
 
       {
         q && (
