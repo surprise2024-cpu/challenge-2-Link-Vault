@@ -28,7 +28,10 @@ export function useBookmarks() {
         setBookmarks(saveBookmark(bookmark))
     };
 
-    const remove = (id: string) => setBookmarks(deleteBookmark(id));
+    const remove = (id: string) => {
+        setBookmarks(deleteBookmark(id))
+        showAlert('Link successfuly unbookmarked', 'success')
+    };
 
     const toggleBookmark = (id: string) => {
         const target = bookmarks.find(b => b.id === id)

@@ -5,7 +5,6 @@ import styles from './LinksPage.module.css'
 import { Text } from '../components/Text/Text'
 import { Button } from '../components/Button/Button'
 import { useNavigate } from 'react-router'
-import { ContentContainer } from '../ContentContainer'
 import { SearchBar } from '../components/Search/SearchBar'
 import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 import { useAlert } from '../components/Alert/AlertProvider'
@@ -55,13 +54,21 @@ export const Bookmarked: React.FC = () => {
   
   
   if (bookmarks.length === 0) {
+
       return <div className={styles['empty']} >
+
         <img src={mark} alt='bookmark' className={styles['mark-icon']}/>
+
         <Text variant='h2' className={styles['short-mess']}>Add your first link today</Text>
+
         <Button className={styles['empty-btn']} onClick={handleRedirect}>
+
           <img src={add} alt='add icon' />
+
           Add Link
+
         </Button>
+        
       </div>
     }
 
@@ -73,7 +80,7 @@ export const Bookmarked: React.FC = () => {
           <SearchBar value={query} onChange={setQuery} placeholder='Link Search' className={styles['searchbar']}/>
         
         </div>
-        
+
       {
         q && (
           <Text variant='p' className={styles['description']} >Showing Search Results</Text>

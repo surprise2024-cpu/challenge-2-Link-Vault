@@ -113,24 +113,27 @@
     color: #fff;
 }
 
+
 .delete-btn {
     background: transparent;
     color: #dc2626;
-    border: 1px solid #d93025;
+    border: none;
+    background: rgba(255, 0, 0, 0.3);
 }
 
 .delete-btn:hover {
-    background-color: #F8D7DA;
+    box-shadow: 0 4px 15px rgba(255, 106, 116, 0.6);
 }
 
 .edit-btn {
-    background: transparent;
-    border: 1px solid #70757a;
-    color: #1f2937;
+    background-color: #e0e0e0;
+    border: none;
+    color: #475569;
 }
 
 .edit-btn:hover {
-    background-color: #C8E6C9;
+    box-shadow: 0 10px 20px rgba(128, 128, 128, 0.5);
+    background-color: #b8b8b8;
 }
 
 .searchbar-cont {

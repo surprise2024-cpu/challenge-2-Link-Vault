@@ -11,7 +11,7 @@ type SearchProps = {
 
 export const Search: React.FC<SearchProps> = ({ onAdd }) => {
   return (
-    <div className={styles['searchbar-cont']}>
+    <div className={styles['linkForm-cont']}>
 
       <ContentContainer>
 

@@ -27,12 +27,17 @@ export const SearchBar: React.FC<SearchbarProps> = ({ value, onChange, placehold
       <Text variant='span' className={styles['searchbar-label']}>Search</Text>
 
         <input type='text' className={`${styles['search-input']} ${className}`} 
+
             value={value} onChange={(e) => onChange(e.target.value)}
+
             placeholder={placeholder} 
         />
-        <Button className={styles['empty-btn']} onClick={handleRedirect}>
+        <Button className={styles['searchbar-btn']} onClick={handleRedirect}>
+          
           <img src={add} alt='add icon' />
+
           Add Link
+          
         </Button>
 
     </div>
