@@ -53,7 +53,7 @@ Vault link is a bookmark manager built as a React + TypeScript MVP. Unlike nativ
 |  |  |
 |---|---|
 | React + TypeScript ||
-| React Router | Client=side routing |
+| React Router | Client-side routing |
 | CSS modules | plain CSS |
 | localStorage | Persistence layer for this MVP |
 | Vite | Build tool / dev server |
@@ -126,7 +126,7 @@ tsconfig.node.json
 vite.congig.ts
 ```
 
-**Why this structure** All `localStorage` access is isolated inside `library/storage.tsx`, and every component talks to it exclusively through the `useBookmarks` hook.
+**Why this structure**: All `localStorage` access is isolated inside `library/storage.tsx`, and every component talks to it exclusively through the `useBookmarks` hook.
 
 ---
 
@@ -163,15 +163,12 @@ npm run build
 
 ## Usage
 
-||||
-
-|---|---|---|
-| 1. | **Save a link** | Fill in the Title, URL (required), plus optional Description and Tags, then hit **Save Link**. |
-| 2. | **Browse your links** | Head to the **Links** page to see every saved bookmark as a card. |
-| 3. | **Search** | use the search bar on the Links or Bookmarded page to filter by title, URL, description or tag. |
-| 4. | **Bookmark a favorite** | click **Bookmark** on any card to star it; it'll now appear on the **Bookmarkd links** page/ |
-| 5. | **Edit** | click **Edit** to opena modal pre-filled with tthe link's current details; make changes and click **Save Changes** |
-| 6. | **Delete** | click **Delete**; you'll be asked to confirm before the link is permanently removed.
+1. **Save a link** - Fill in the Title, URL (required), plus optional Description and Tags, then hit **Save Link**.
+2. **Browse your links** - Head to the **Links** page to see every saved bookmark as a card.
+3. **Search** - use the search bar on the Links or Bookmarded page to filter by title, URL, description or tag.
+4. **Bookmark a favorite** - click **Bookmark** on any card to star it; it'll now appear on the **Bookmarkd links** page.
+5. **Edit** - click **Edit** to opena modal pre-filled with tthe link's current details; make changes and click **Save Changes**
+6. **Delete** - click **Delete**; you'll be asked to confirm before the link is permanently removed.
 
 ---
 
@@ -183,4 +180,3 @@ npm run build
 - [ ] Browser extension for one-click saving from any page.
 - [ ] Import/export bookmarks as JSON
     
-
