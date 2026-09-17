@@ -17,8 +17,9 @@ export const Alert: React.FC<AlertProps> = ({ alert, onClose}) => {
         }, 4000)//auto closes after 4s
 
         return () => clearTimeout(timer)
-    }, [alert.id, onClose])
+    }, [alert.id, onClose]) // run the effect again if alert.id or onClose() changes.
 
+    // chooses background color based on the alert type.
     const getAlertBgColor = () => {
         switch (alert.type) {
             case 'success': return '#d4edda'
