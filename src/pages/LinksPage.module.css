@@ -69,16 +69,21 @@
 }
 
 .description {
+    height: 100px;
     color: #5a5650;
     font-size: 14px;
-    margin: 10px 0 0;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 .tag {

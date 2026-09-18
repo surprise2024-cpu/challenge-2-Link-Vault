@@ -122,7 +122,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
 
         <label className={styles['field-label']}>Description</label>
 
-        <input type='text' 
+        <textarea 
           placeholder='Description (Optional)...' 
           className={styles['form-textarea']} 
           value={description} 
