@@ -30,7 +30,7 @@ export const LinkForm: React.FC<LinkFormProps> = ({ onAdd }) => {
 
     if (!/^https?:\/\//i.test(absoluteUrl)) {
 
-      absoluteUrl = `httpss://${absoluteUrl}`;
+      absoluteUrl = `https://${absoluteUrl}`;
       
     }
 
