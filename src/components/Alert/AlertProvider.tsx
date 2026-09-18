@@ -7,25 +7,29 @@ import type { AlertData, AlertType, AlertContextType } from '../library/types'
 import styles from './Alert.module.css'
 import { ConfirmDialog } from '../ConfirmDialog/ConfirmDialog'
 
+// creates the shared data.
 const AlertContext = createContext<AlertContextType | undefined>(undefined)
 
 export const AlertProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
+  // creates the state for all visible alerts.
   const [alerts, setAlerts] = useState<AlertData[]>([]);
 
   const [confirmState, setConfirmState] = useState<{
     message: string
     resolve: (value: boolean) => void 
-  } | null>()
+  } | null>(null)
 
   const showAlert = useCallback((message: string, type: AlertType = 'info') => {
 
     const id = Date.now().toString();
 
+    // adds alert to the existing alerts.
     setAlerts((prev) => [...prev, { id, message, type }])
 
   }, []);
 
+  // creates a function that removes one alert.
   const removeAlert = useCallback((id: string) => {
     setAlerts((prev) => prev.filter((alert) => alert.id !== id))
   }, [])
@@ -41,6 +45,7 @@ export const AlertProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setConfirmState(null)
   }
 
+  // makes alerts reausable
   return (
     <AlertContext.Provider value={{ showAlert, confirmAction }}>
 
