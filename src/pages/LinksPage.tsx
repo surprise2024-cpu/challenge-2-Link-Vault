@@ -5,7 +5,6 @@ import styles from './LinksPage.module.css'
 import { Text } from '../components/Text/Text'
 import { Button } from '../components/Button/Button'
 import { SearchBar } from '../components/Search/SearchBar'
-import { ContentContainer } from '../ContentContainer'
 
 import mark from '../assets/undraw_save-to-bookmarks_9o51.png'
 import { EditModal } from '../components/EditModal/EditModal'
