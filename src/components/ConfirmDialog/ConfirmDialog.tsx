@@ -2,6 +2,7 @@ import React from 'react'
 
 import styles from './ConfirmDialog.module.css'
 import { Button } from '../Button/Button'
+import { Text } from '../Text/Text'
 
 type ConfirmDialogProps = {
     message: string
@@ -15,7 +16,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ message, onConfirm
 
         <div className={styles['dialog']} onClick={(e) => e.stopPropagation()}>
 
-            <p className={styles['message']} >{message}</p>
+            <Text variant='p' className={styles['message']} >{message}</Text>
 
             <div className={styles['actions']} >
                 
