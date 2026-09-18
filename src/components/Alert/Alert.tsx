@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 
 import type { AlertData } from '../library/types'
 import styles from './Alert.module.css'
+import { X } from 'lucide-react'
+import { Text } from '../Text/Text'
 
 type AlertProps = {
     alert: AlertData,
@@ -33,12 +35,12 @@ export const Alert: React.FC<AlertProps> = ({ alert, onClose}) => {
   return (
     <div style={{ backgroundColor: getAlertBgColor() }}  className={styles['alert-cont']}>
 
-        <span>{alert.message}</span>
+        <Text variant='span'>{alert.message}</Text>
 
         <button onClick={() => onClose(alert.id) } 
 
         className={styles['alert-btn']}>
-            X
+            <X size={18}/>
         </button>
 
     </div>
