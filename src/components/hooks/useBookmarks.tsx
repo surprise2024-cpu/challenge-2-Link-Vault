@@ -29,15 +29,13 @@ export function useBookmarks() {
 
     // function creates a new bookmark
     const add = ({
-
         url, 
         title, 
         description = '', 
         tags = [] 
-
     }: AddInputProps) => {
 
-        // creaes a book mark object
+        // creates a book mark object
         const bookmark: Bookmark = {
             id: crypto.randomUUID(), //  creates a unique ID
             url,
